@@ -71,27 +71,39 @@ $(function() {
 
     /* 写一个叫做 "Initial Entries" 的测试用例 */
     describe("Initial Entries",function(){
-      beforeEach(function(done){
-        loadFeed(function(){
-          done();
-        });
+      let Entries0=document.getElementsByClassName("entry");
+      beforeEach(function(done) {
+        loadFeed(0,done);
       });
-        /* TODO:
+        /*
          * 写一个测试保证 loadFeed 函数被调用而且工作正常，即在 .feed 容器元素里面至少有一个 .entry 的元素。
          *
          * 记住loadFeed() 函数是异步的所以这个而是应该使用 Jasmine 的 beforeEach、和异步的 done() 函数。
          */
          it("loadFeed works",function(){
-           expect(loadFeed.feedUrl).not.toBeNull();
+           console.log(Entries0[0].innerText);
+           expect(Entries0[0]).toBeDefined();
          });
     });
 
     /* 写一个叫做 "New Feed Selection" 的测试用例 */
     describe("New Feed Selection",function(){
-        /* TODO:
-         * 写一个测试保证当用 loadFeed 函数加载一个新源的时候内容会真的改变。
-         * 记住loadFeed() 函数是异步的。
-         */
-
+      let EnIn0,EnIn1;
+      beforeEach(function(done) {
+        let Entries0=document.getElementsByClassName("entry");
+        EnIn0=Entries0[0].innerText;
+        console.log(EnIn0);
+        loadFeed(1,done);
+      });
+       /*
+        * 写一个测试保证当用 loadFeed 函数加载一个新源的时候内容会真的改变。
+        * 记住loadFeed() 函数是异步的。
+        */
+       it("loadFeed will change",function(){
+         let Entries1=document.getElementsByClassName("entry");
+         EnIn1=Entries1[0].innerText;
+         console.log(EnIn1);
+         expect(EnIn1).not.toBe(EnIn0);
+       });
     });
 }());
