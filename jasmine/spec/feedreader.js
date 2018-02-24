@@ -75,6 +75,7 @@ $(function() {
          * 记住loadFeed() 函数是异步的所以这个而是应该使用 Jasmine 的 beforeEach、和异步的 done() 函数。
          */
     it("loadFeed works", function() {
+      console.log(Entries0[0].innerText);
       expect(Entries0[0]).toBeDefined();
     });
   });
