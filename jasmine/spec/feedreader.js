@@ -113,10 +113,10 @@ $(function() {
     beforeEach(function(done) {
       loadFeed(1, function() {
         text1 = $('.feed').text();
-        console.log("leadFeed之1加载完成：" + text1);
+        console.log("1加载完成：" + text1);
         loadFeed(0, function() {
           text0 = $('.feed').text();
-          console.log("leadFeed之0加载完成：" + text0);
+          console.log("0加载完成：" + text0);
           done();
         });
       });
