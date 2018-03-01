@@ -1,6 +1,6 @@
 Udacity前端进阶纳米学位，项目3，订阅阅读器测试
 =======
-# 街机游戏克隆项目-Frogger
+# 订阅阅读器测试项目 - Feed Reader Testing
 
 ## <i class="icon-list"></i> 本页索引
 
