@@ -2,8 +2,6 @@
  *
  * 这是 Jasmine 会读取的spec文件，它包含所有的要在应用上面运行的测试。
  */
-
-/* 我们把所有的测试都放在了 $() 函数里面。因为有些测试需要 DOM 元素。 我们得保证在 DOM 准备好之前他们不会被运行。 */
 $(function() {
   /*这个用例的测试都是关于 Rss 源的定义的，也就是应用中的 allFeeds 变量。
     */
@@ -12,6 +10,12 @@ $(function() {
     it('are defined', function() {
       expect(allFeeds).toBeDefined();
       expect(allFeeds.length).not.toBe(0);
+      // 检查 URL 格式是否正确的正规表达式
+      var regularExpressionUrl = /^((ht|f)tps?):\/\/([\w\-]+(\.[\w\-]+)*\/)*[\w\-]+(\.[\w\-]+)*\/?(\?([\w\-\.,@?^=%&:\/~\+#]*)+)?/;
+      // 检查格式
+      for (let i = 0; i < allFeeds.length; i++) {
+        expect(allFeeds[i].url).toMatch(regularExpressionUrl);
+      }
     });
 
     /*
@@ -30,7 +34,7 @@ $(function() {
     it('have name and are not null', function() {
       for (let i = 0; i < allFeeds.length; i++) {
         expect(allFeeds[i].name).not.toBeNull();
-        expect(allFeeds[i].url).not.toBe('');
+        expect(allFeeds[i].name).not.toBe('');
       }
     });
   });
