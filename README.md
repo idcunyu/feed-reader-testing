@@ -10,7 +10,7 @@
 
 ## 点击查看网页
 
-[订阅阅读器测试（需挂VPN才能正常查看）](https://sansregret.github.io/udacity/project-three/index)
+[订阅阅读器测试（需挂VPN才能正常查看）](https://vernonn.github.io/udacity/project-three/index)
 
 ## 项目说明
 
