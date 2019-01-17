@@ -2,7 +2,7 @@
 =======
 # 订阅阅读器测试项目 - Feed Reader Testing
 
-## <i class="icon-list"></i> 本页索引
+## <i class="icon-list"></i> 索引
 
 * [点击查看网页](#点击查看网页)
 * [项目说明](#项目说明)
